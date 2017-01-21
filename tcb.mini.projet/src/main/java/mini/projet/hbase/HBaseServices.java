@@ -10,12 +10,12 @@ import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.util.Bytes;
 
-import mini.projet.entities.Paiment;
+import mini.projet.entities.TYPE01_01;
 
 public final class HBaseServices {
 	private static HBaseServices hbaseService;
 
-	public void createPaimenet(Paiment paiment) throws IOException {
+	public void createPaimenet(TYPE01_01 paiment) throws IOException {
 		Configuration conf = new Configuration();
 		conf.set("hbase.zookeeper.quorum", "192.168.1.163");
 		conf.set("hbase.zookeeper.property.clientPort", "2181");

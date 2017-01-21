@@ -8,10 +8,10 @@ public final class Conf {
 	public static final String ADRESS_ES = "127.0.0.1";
 	public static final int PORT_ES = 9300;
 	public static final String REGEX_PATTERN_FACTUR = "(.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*)";
-	public static final String REGEX_PATTERN_FACTUR_SEOND = "(.*)|(.*)|(.*)|(.*)|(.*)|(.*)|(.*)|(.*)|(.*)|(.*)|(.*)";
+	public static final String REGEX_PATTERN_FACTUR_SEOND = "(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)";
 	public static final String INDEX_ES = "mini_projet";
 	public static final String TYPE_ES = "paiment";
-	
+
 	private Conf() {
 
 	}

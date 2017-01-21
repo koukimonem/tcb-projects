@@ -16,7 +16,7 @@ import org.apache.kafka.common.TopicPartition;
 import com.google.gson.Gson;
 
 import mini.projet.elasticSearch.ElasticSearchServices;
-import mini.projet.entities.Paiment;
+import mini.projet.entities.TYPE01_01;
 import mini.projet.hbase.HBaseServices;
 import mini.projet.main.Conf;
 
@@ -43,28 +43,28 @@ public final class KafkaConsumerServices implements Runnable {
 		while (true) {
 
 			ConsumerRecords<String, String> records = consumer.poll(1000);
-			ArrayList<Paiment> listPaiments = new ArrayList<Paiment>();
+			ArrayList<TYPE01_01> listPaiments = new ArrayList<TYPE01_01>();
 			Gson gson = new Gson();
 			for (ConsumerRecord<String, String> record : records) {
 				if (PatternMatcher.matchFacture(record.value().toString())) {
 					String splits[] = record.value().toString().split(";");
 					if (isInteger(splits[0], 10)) {
-						Paiment paimment = new Paiment();
-						paimment.setNumero(Long.parseLong(splits[0]));
-						paimment.setIdentifiant(splits[1]);
-						paimment.setCodeMessage(splits[2]);
-						paimment.setMontantTTC(splits[3]);
-						paimment.setDateEcheanceFacture(splits[4]);
-						paimment.setDateEcheanceApurement(splits[5]);
+						TYPE01_01 type01_01 = new TYPE01_01();
+						type01_01.setNumero(Long.parseLong(splits[0]));
+						type01_01.setIdentifiant(splits[1]);
+						type01_01.setCodeMessage(splits[2]);
+						type01_01.setMontantTTC(splits[3]);
+						type01_01.setDateEcheanceFacture(splits[4]);
+						type01_01.setDateEcheanceApurement(splits[5]);
 						if (splits.length > 6) {
-							paimment.setMarqueur4(splits[6]);
+							type01_01.setMarqueur4(splits[6]);
 							if (splits.length == 8)
-								paimment.setMarqueur5(splits[7]);
+								type01_01.setMarqueur5(splits[7]);
 						}
 
 						try {
-							hbaseServ.createPaimenet(paimment);
-							esObject.sendToElasticSearch(paimment);
+							hbaseServ.createPaimenet(type01_01);
+							esObject.sendToElasticSearch(type01_01);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();

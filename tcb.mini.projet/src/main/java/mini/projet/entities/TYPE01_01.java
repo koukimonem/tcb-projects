@@ -2,7 +2,7 @@ package mini.projet.entities;
 
 import java.io.Serializable;
 
-public class Paiment implements Serializable {
+public class TYPE01_01 implements Serializable {
 	
 	private long numero;
 	private String identifiant;
@@ -79,7 +79,7 @@ public class Paiment implements Serializable {
 
 
 
-	public Paiment() {
+	public TYPE01_01() {
 
 	}
 
