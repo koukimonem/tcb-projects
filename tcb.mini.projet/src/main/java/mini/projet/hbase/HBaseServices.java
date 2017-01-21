@@ -33,7 +33,8 @@ public final class HBaseServices {
 				Bytes.toBytes(paiment.getDateEcheanceApurement()));
 		put.addColumn("marqueur4".getBytes(), "a".getBytes(),
 				Bytes.toBytes(paiment.getMarqueur4() != null ? paiment.getMarqueur4() : ""));
-		put.addColumn("marqueur5".getBytes(), "a".getBytes(), Bytes.toBytes(paiment.getMarqueur5() != null ? paiment.getMarqueur5() : ""));
+		put.addColumn("marqueur5".getBytes(), "a".getBytes(),
+				Bytes.toBytes(paiment.getMarqueur5() != null ? paiment.getMarqueur5() : ""));
 		table.put(put);
 		connection.close();
 	}
