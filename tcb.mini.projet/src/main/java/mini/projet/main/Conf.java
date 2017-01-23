@@ -10,7 +10,7 @@ public final class Conf {
 	public static final String REGEX_PATTERN_FACTUR = "(.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*)";
 	public static final String REGEX_PATTERN_FACTUR_SEOND = "(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)\\|(.*)";
 	public static final String INDEX_ES = "mini_projet";
-	public static final String TYPE_ES = "paiment";
+	public static final String TYPE_ES = "type01_01";
 
 	private Conf() {
 
